@@ -10,7 +10,7 @@ class Alarm_Ringing(QMainWindow):
         super(Alarm_Ringing, self).__init__()
 
         # Load the UI file
-        uic.loadUi("G:/Python/Projects/Alarm Clock/alarm_ringing.ui", self)
+        uic.loadUi("alarm_ringing.ui", self)
 
         # Find widgets from the UI
         self.frame = self.findChild(QFrame, "frame")
@@ -37,7 +37,7 @@ class Alarm_Ringing(QMainWindow):
         self.alarm_time_cl.setText(time)   # Show alarm time
         self.alarm_name_cl.setText(name)   # Show alarm name
 
-        self.show()  # Display the ringing window
+        self.show()  
         
         # Load the alarm sound
         url = QUrl.fromLocalFile(song_path)
@@ -56,3 +56,4 @@ if __name__ == "__main__":
     window = Alarm_Ringing()
     window.show()
     sys.exit(app.exec_())
+
