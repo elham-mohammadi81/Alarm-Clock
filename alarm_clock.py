@@ -47,7 +47,7 @@ class Alarm_Clock(QMainWindow):
         self.scroll_layout = QVBoxLayout(self.scroll_widget)
         self.scroll_layout.setSpacing(10)
         self.scroll_layout.setContentsMargins(10, 10, 10, 10)
-        self.scroll_layout.addWidget(self.user_alarm_label, alignment=Qt.AlignCenter)  # Title "Your Alarms"
+        self.scroll_layout.addWidget(self.user_alarm_label, alignment=Qt.AlignCenter)  
         self.scroll_widget.setLayout(self.scroll_layout)
         self.ScrollArea.setWidget(self.scroll_widget)
         self.ScrollArea.setWidgetResizable(True)
@@ -180,4 +180,5 @@ class Alarm_Clock(QMainWindow):
 app = QApplication(sys.argv)
 window = Alarm_Clock()
 app.exec_()
+
 
