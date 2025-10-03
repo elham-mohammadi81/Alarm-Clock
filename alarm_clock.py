@@ -2,7 +2,6 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QFrame, QLabel, QPushButt
 from PyQt5 import uic
 from create_alarm import Create_Alarm
 from alarm_ringing import Alarm_Ringing
-from Pomodoro import Pomodoro
 from PyQt5.QtCore import QTimer, pyqtSignal, Qt
 from PyQt5.QtGui import QIcon, QFont
 from PyQt5.QtMultimedia import QMediaPlayer
@@ -18,7 +17,7 @@ class Alarm_Clock(QMainWindow):
         super(Alarm_Clock, self).__init__()
 
         # Load the .ui file created in Qt Designer
-        uic.loadUi("G:\Python\Projects\Alarm Clock\Alarm_clock.ui", self)
+        uic.loadUi("Alarm_clock.ui", self)
 
         # Find all required widgets by object name from the .ui file
         self.ScrollArea = self.findChild(QScrollArea, "scrollArea")
@@ -70,7 +69,6 @@ class Alarm_Clock(QMainWindow):
 
         # Connect buttons
         self.Create_New_Alarm_Button.clicked.connect(self.Open_Create_page)
-        self.Pomodoro_Clock_Button.clicked.connect(self.Open_pomodoro_page)
 
         self.create_new_alarm = None
 
@@ -105,13 +103,9 @@ class Alarm_Clock(QMainWindow):
             quick_alarm.hour,
             quick_alarm.minute,
             'Quick Alarm',
-            "G:\Python\Projects\Alarm Clock\jingle-bells-alarm-clock-version-129333.mp3"
+            "jingle-bells-alarm-clock-version-129333.mp3"
         )
 
-    # Open Pomodoro timer page
-    def Open_pomodoro_page(self):
-        self.pomodoroPage = Pomodoro()
-        self.pomodoroPage.show()
 
     # Update digital clock and date
     def show_time(self):
@@ -145,7 +139,7 @@ class Alarm_Clock(QMainWindow):
         # Delete button for alarm
         delete_button = QPushButton(frame_alarm)
         delete_button.setStyleSheet("background-color: #F8E8EE ;border-radius: 20px;")
-        delete_button.setIcon(QIcon("G:/Python/Projects/Alarm Clock/Waste-Garbage-Can-Vector-PNG-Clipart.png"))
+        delete_button.setIcon(QIcon("Waste-Garbage-Can-Vector-PNG-Clipart.png"))
 
         # Add widgets to alarm frame
         frame_layout.addWidget(label_new_alarm)
@@ -186,3 +180,4 @@ class Alarm_Clock(QMainWindow):
 app = QApplication(sys.argv)
 window = Alarm_Clock()
 app.exec_()
+
