@@ -14,7 +14,7 @@ class Create_Alarm(QMainWindow):
         super(Create_Alarm, self).__init__()
 
         # Load the UI file
-        uic.loadUi("G:/Python/Projects/Alarm Clock/Create_Alarm.ui", self)
+        uic.loadUi("Create_Alarm.ui", self)
 
         # Define widgets
         self.frame = self.findChild(QFrame, "frame")
@@ -77,11 +77,11 @@ class Create_Alarm(QMainWindow):
 
         # Choose file path based on song selection
         if self.song.currentText() == ' jingle': 
-            file_path = r'G:/Python/Projects/Alarm Clock/jingle-bells-alarm-clock-version-129333.mp3'
+            file_path = r'jingle-bells-alarm-clock-version-129333.mp3'
         elif self.song.currentText() == ' kirby':
-            file_path = r'G:/Python/Projects/Alarm Clock/kirby-alarm-clock-127079.mp3'
+            file_path = r'kirby-alarm-clock-127079.mp3'
         elif self.song.currentText() == ' tropical':
-            file_path = r'G:/Python/Projects/Alarm Clock/tropical-alarm-clock-168821.mp3'
+            file_path = r'tropical-alarm-clock-168821.mp3'
 
         song = file_path
 
@@ -95,11 +95,11 @@ class Create_Alarm(QMainWindow):
     def choice_a_song(self):
         # Match song with file path
         if self.song.currentText().strip() == 'jingle': 
-            file_path = r'G:/Python/Projects/Alarm Clock/jingle-bells-alarm-clock-version-129333.mp3'
+            file_path = r'jingle-bells-alarm-clock-version-129333.mp3'
         elif self.song.currentText().strip() == 'kirby':
-            file_path = r'G:/Python/Projects/Alarm Clock/kirby-alarm-clock-127079.mp3'
+            file_path = r'kirby-alarm-clock-127079.mp3'
         elif self.song.currentText().strip() == 'tropical':
-            file_path = r'G:/Python/Projects/Alarm Clock/tropical-alarm-clock-168821.mp3'
+            file_path = r'tropical-alarm-clock-168821.mp3'
   
         # Load and play song in media player
         url = QUrl.fromLocalFile(file_path)
@@ -123,3 +123,4 @@ if __name__ == "__main__":
     window = Create_Alarm()
     window.show()
     sys.exit(app.exec_())
+
