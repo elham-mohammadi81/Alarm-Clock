@@ -33,7 +33,6 @@ class Alarm_Ringing(QMainWindow):
 
     # Update UI with alarm info and start playing sound
     def update_info(self, time, name, song_path):
-        print(time, name, song_path)  # Debugging log
         self.alarm_time_cl.setText(time)   # Show alarm time
         self.alarm_name_cl.setText(name)   # Show alarm name
 
@@ -56,4 +55,5 @@ if __name__ == "__main__":
     window = Alarm_Ringing()
     window.show()
     sys.exit(app.exec_())
+
 
